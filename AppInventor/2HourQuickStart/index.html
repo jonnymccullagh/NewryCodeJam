@@ -1,0 +1,535 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>AppInventor Quick Start</title>
+	<meta name="author" content="Jonny McCullagh"/>
+	<meta name="created" content="2016-02-16T21:30:40.434157172"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900">
+	<link rel="stylesheet" href="css/learning.css" />
+	<style>
+	img {
+		margin: 5px;
+		border: 1px solid #cecece;
+	}
+
+	</style>
+</head>
+<body class="learning worksheet learn worksheet ">
+    <div class="container">
+
+        <header class="header">
+            <a href="/resources/" class="heading" title="Back to raspberrypi.org">Newry Code Jam | Learning Resources</a>
+        </header>
+ <div class="main">
+<article class="content">
+
+
+<h1>App
+Inventor</h1>
+
+<h2>Overview</h2>
+<p>AppInventor is a special website that enables you to create your
+own apps for Android devices. The exercises below should take 2-3
+hours to complete and will help you to get started. To develop your
+skills further search online for tutorials and YouTube videos.</p>
+<h2>Getting
+Started</h2>
+<h3>What you will need</h3>
+<ul>
+	<li/>
+<p>A computer
+	with the Google Chrome web browser</p>
+	<li/>
+<p>An Android
+	phone or tablet (sorry iPhones are not compatible)</p>
+	<li/>
+<p>A
+	Google/Gmail address and password</p>
+	<li/>
+<p>Internet
+	Access</p>
+</ul>
+<p><br/>
+
+</p>
+<p>Additionally on your
+Android device you need to open your 'Settings' and under 'Security'
+you should tick the box for 'Unknown Sources - Allow installation of apps from unknown sources'. After creating your own App you should switch this option off again.</p>
+<h3>Testing Your App</h3>
+<p>At home you may
+install a special app on your Android device called 'MIT AI
+Companion' that makes it easy to test your apps as you develop them.
+However, on the C2K network each time you want to run your app: 
+</p>
+<ul>
+	<li/>
+<p>Download your
+	app APK file using the 'Build' menu</p>
+	<li/>
+<p>Plug your
+	Android device into the computer using the USB cable</p>
+	<li/>
+<p>Copy the APK
+	file from your 'Downloads' folder to the Android device</p>
+	<li/>
+<p>Use a file
+	manager (such as ES Explorer or Astro) on the Android device to
+	locate the APK file and tap to install the APK file</p>
+	<li/>
+<p>After
+	installing your App you should be able to open it and view it in all
+	its glory</p>
+</ul>
+<p><br/>
+
+</p>
+<h3>What is an APK file</h3>
+<p>An Android Package
+or APK is a special file that contains all the functionality, images,
+sounds for an app. You may not have realised it but each time you
+install an app from the Play Store you are actually downloading an
+APK file and installing it on your device. 
+</p>
+<p><br/>
+
+</p>
+<h3>How do I share my Apps</h3>
+<p>When you have
+finished developing your App you can send the APK file to your
+friends by email or USB. However to install apps that are not in the
+Play Store they will also have to visit their 'Settings' <font face="Liberation Serif, serif">»</font> 'Security options' to allow 'Installing unsigned from Unknown
+Sources'.</p>
+<p>The alternative is to add your App to the Google Play Store so that anyone in the world can install your App easily. To do so you will need to:</p>
+<ul>
+	<li>Sign up as a developer at <a href="https://play.google.com/apps/publish/">https://play.google.com/apps/publish/</a></li>
+	<li>Pay a one-time fee of $25</li>
+	<li>Upload your APK file</li>
+</ul>
+<h2>Exercise 1</h2>
+
+</p>
+<p>In this exercise we will create an app that will speak when someone shakes the device.</p>
+<ol>
+	<li>Visit the App Inventor website at <a href="http://ai2.appinventor.mit.edu/">http://ai2.appinventor.mit.edu</a></li>
+	<li>Login using	your Google email address and password</li>
+	<li>Click the 'Start new project' button as shown in the image below:<br/>
+  <img src="images/MIT_App_Inventor_2.png" name="Image1" align="left" width="661" height="206"></li>
+    <br clear="left"/>
+	<li>Type 'Shaky' as the name of your App (as shown below) and click the 'OK' button:<br/>
+  		<img src="images/MIT_App_Inventor_3.png" name="Image2" align="left" width="474" height="202"></li>
+    	<br clear="left"/>
+  </img>
+	<li>A blank app design window opens (as shown  below). It is important to spend a few minutes
+	understanding the layout of this window.<br/>
+  <img src="images/MIT_App_Inventor_4.png" name="Image3" align="left" width="664" height="299"></li>
+    <br clear="left"/>
+</ol>
+<p>There are several things to notice on this screen:</p>
+<ul>
+	<li>
+		<p>The '<b>Palette</b>'
+			on the left shows a list of widgets you can add to your app. There
+			are many things that can be added to your app including buttons and
+			images. The list is very long and there are extra items under the
+			headings 'Layout', 'Media', Drawing' and 'Sensors'.</p><br>
+			<img src="images/MIT_App_Inventor_Concertina.png "name="Image4" align="left" width="204" height="174">
+		    <br clear="left"/>
+    </li>
+	<li>
+		<p>The '<b>Viewer</b>'
+			in the centre shows a preview of how your app will look</p>
+	</li>
+	<li>
+		<p>The
+			'<b>Components</b>' panel shows a list of items that have already
+			been added to your app</p>
+	</li>
+	<li>
+		<p>The '<b>Media</b>'
+			panel is below the 'components' panel and allows you to upload files
+			(such as pictures and sounds) to be used within your app.</p>
+	</li>
+	<li>
+		<p>The
+		'<b>Properties</b>' panel allows you to amend the settings of any
+		items you have already added to your app. Choose an item in the
+		'components' list and the 'properties' panel will show the settings
+		for that item.
+		</p>
+	</li>
+</ul>
+<p><br/>
+
+</p>
+<p><br/>
+
+</p>
+<ol start="6">
+	<li>
+		From the 'Palette' click-and-drag a button from the palette to the 'Viewer' (as shown below):<br>
+		<img src="images/MIT_AI_button.png" width="" height="" alt="New button" >
+	</li>
+	
+	<li>
+		There should now be a button on your App. Click the button and notice that the 'Properties' panel on the right changes to show the properties of your button you clicked. In the 'Properties' panel you can change the colour of your button and many other properties but for now let's change the 'Text' attribute. By default it should be "Text for Button1" but change that to "Say Hello". <br>
+		<img src="images/MIT_AI_say_hello.png" width="" height="" alt="Change button text" >
+	</li>
+	<li>
+		Notice that the 'Components' panel now shows your screen object 'Screen1' and on 'Screen1' there is a button named 'Button1'. Click the 'Button1' component in the 'Components' Panel and then click the 'Rename' button below that. Change the name of the button from 'Button1' to 'btnHello' (as shown below), then click 'OK'. <br>
+		<img src="images/MIT_AI_change_button_name.png" width="" height="" alt="Change button name" >
+	</li>
+
+	<li>
+		Next add another component to the Screen. From the 'Palette' under the 'Media' section click the 'TextToSpeech' component and drag it onto your screen. Because this is not a component the user can see it will be placed underneath the screen in the 'Non-Visible Components' section.<br>
+		<img src="images/MIT_AI_TextToSpeach.png" width="" height="" alt="Add Text to Speech component" >
+	</li>
+
+	<li>
+		Now it is time to program your components. At the top right of the AppInventor page you should see buttons for 'Designer' and 'Blocks'. A the moment you are in 'Designer' mode. Click the 'Blocks' button. You will notice that the design of your App is hidden and you can now start adding programming blocks.<br>
+		<img src="images/MIT_AI_BlocksMode.png" width="" height="" alt="Blocks Mode" >
+	</li>
+
+	<li>
+		On the left panel you should see the components you currently have in your App (Screen1, btnHello, TextToSpeech1). Click on 'btnHello' and you will notice that all the blocks available for your button appear. The first block is the one we need. Click and drag it onto the workspace area.<br>
+	</li>
+
+	<li>
+		Next in the left Blocks panel click the 'TextToSpeech1' component and choose the third (purple) block. Drag it onto the workspace and drop it inside the  "When btnHello.Click" block. The blocks stick together like jigsaw pieces. Your blocks should look like the ones shown below:<br>
+		<img src="images/MIT_AI_BlocksTtS.png" width="" height="" alt="Two Blocks Attached" >
+	</li>
+
+	<li>
+		Next from the left Blocks panel choose 'Text'. The available blocks should appear. Click-and-drag the first block onto the workspace and join it to the 'Message' part of the speak block. Click the space inside the quotes and type "Hello". Your blocks should look like the ones below:<br>
+		<img src="images/MIT_AI_BlocksAddText.png" width="" height="" alt="Add Text Block" >
+	</li>
+
+	<li>
+		You can now test your App. When you press the button on the screen the phone should say 'Hello'. <br> 
+	</li>
+</ol>
+		<h3>How do I share my Apps</h3>
+		<strong>If you are on the C2K network you should use the APK file:</strong>
+			<ul>
+				<li>From the top menu choose 'Build' > 'App (save .apk to my computer)' <br><img src="images/MIT_AI_DownloadApk1.png" width="" height="" alt="Save as APK" ></li>
+				<li>The .apk file should start building and then download</li>
+				<li>Notice that the downloaded APK file appears at the bottom of the Chrome Web Browser (see below). Click the arrow and choose 'Show in folder'.<br><img src="images/MIT_AI_DownloadApk.png" width="" height="" alt="Save as APK" > </li>
+				<li>Your computer will then show the 'Shaky.apk' file. You should connect your Android tablet or phone to your computer using the USB cable and then Copy/Paste the 'Shaky.apk' file from your computer onto the device.</li>
+				<li>When the file has been copied onto your Android device use a file manager such as 'Astro' or 'ES Explorer' to find and then open the file. You should choose to "Open with Package Installer". Once the APK has been installed you can 'Open' it and test the button.</li>
+				<li>If the APK will not install you may need to amend your Security Settings for 'Unknown Sources' as described on the first page.</li>
+
+			</ul>
+		<strong>If you are at home you can test your app using the AI Companion:</strong>
+			<ul>
+				<li>On your Android Phone/Tablet visit the 'Play Store'</li>
+				<li>Search for the AI Companion App and install it<br><img src="images/MIT_PlayStoreSearch.png" width="200" height="" alt="Add Text Block" ></li>
+				<li>On the AppInventor website choose the 'AI Companion' from the 'Connect' menu:<br><img src="images/MIT_CompanionConnect.png" width="" height="" alt="Add Text Block" >
+				</li>
+				<li>You will receive a code to use with the AI Companion App on your mobile device (see example below):<br><img src="images/MIT_CompanionQR.png" width="" height="" alt="Add Text Block" >
+				</li>
+				<li>Open the AI Companion App and enter the code obtained from the step above<br><img src="images/MIT_CompanionCode.png" width="300" height="" alt="Add Text Block" ></li>
+				<li>If all goes well you should now be able to test your own App on your own Android device</li>
+			</ul>
+			
+<h3>Exercise 2</h3>
+<p >Let's add a little more functionality to your 'Shaky' App.</p>
+<style>
+
+
+</style>
+<ol start="1">
+	<li>
+		From the <span class="code">'Palette'</span> click the <span class="code">'Sensors'</span> option. Then click-and-drag an <span class="code">'AccelerometerSensor'</span> from the palette to the <span class="code">'Viewer'</span>. It will be added under the screen to <span class="code">'Non-visible components'</span> as <span class="code">'AccelerometerSensor1'</span>. <br>
+	</li>
+
+	<li>Return to the 'Blocks' editor and click the 'AccelerometerSensor1' block. <br><img src="images/MIT_WhenShaking.png" width="" height="" alt="Add Text Block" >
+	</li>
+
+	<li>Click-and-drag the 'When AccelerometerSensor1 shaking, do' block and drag it onto the workspace.   
+	</li>
+	<li>Click the 'TextToSpeech1' object and drag the third (purple) block for 'call TextToSpeech1.Speak message' onto the 'AccelerometerSensor1 shaking' block.
+	</li>
+	<li>
+		Next from the left Blocks panel choose 'Text'. Click-and-drag the first block onto the workspace and join it to the 'Message' part of the speak block. Click the space inside the quotes and type "Stop shaking me". Your blocks should look like the ones below:<br>
+		<img src="images/MIT_StopShakingMe.png" width="" height="" alt="Stop Shaking Me block" >
+
+	</li>
+
+	<li> Test your App again and shake your device to see if if speaks to you.
+	</li>
+	
+
+</ol>
+
+</p>
+<h3>Exercise 3</h3>
+<p >In this exercise we will create a Space Invaders style game app.</p>
+<h4>Introduction</h4>
+<p>By building the Space Invaders App you will get practice with using 'Clock' components and 'Timers', using Animation components such as 'Image Sprites' and the 'Canvas', setting visibility, and detecting collisions in App Inventor. You'll program an application that has a shooter ship whose goal is to shoot all the flying saucers on the screen.</p>
+
+
+
+<ol>
+	<li>
+		<p>Visit the App Inventor website at <a href="http://ai2.appinventor.mit.edu/">http://ai2.appinventor.mit.edu</a></p>
+	</li>
+	<li>Login using your Google email address and password</li>
+	<li>Click the 'Start new project' button.</li>
+	<li>Name your project 'SpaceInvaders' (without spaces!)</li>
+	<li>Use the palette to create the components shown below for your SpaceInvaders interface. When you finish, it should look something like the screenshot below.</li>
+</ol>
+
+
+<table width="734" cellpadding="1" cellspacing="0">
+	<col width="106">
+	<col width="80">
+	<col width="161">
+	<col width="131">
+	<col width="246">
+	<tr>
+		<td width="106" bgcolor="#efefef" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif"><b>Component Type </b></font>
+			</p>
+		</td>
+		<td width="80" bgcolor="#efefef" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif"><b>Palette Group </b></font>
+			</p>
+		</td>
+		<td width="161" bgcolor="#efefef" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif"><b>What you'll name it </b></font>
+			</p>
+		</td>
+		<td width="131" bgcolor="#efefef" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif"><b>Purpose of Component </b></font>
+			</p>
+		</td>
+		<td width="246" bgcolor="#efefef" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif"><b>Action </b></font>
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Canvas</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Drawing and Animation</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">Canvas1</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">The background that we will be
+			putting our sprites on</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">Width</font><font face="Arial, serif">
+			property to &quot;Fill parent&quot; and </font><font face="Arial, serif">Height</font><font face="Arial, serif">
+			property to 250. Set the </font><font face="Arial, serif">BackgroundColor</font><font face="Arial, serif">
+			property to Black.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">ImageSprite</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Drawing and Animation</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">RocketSprite</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">The rocket ship in our game</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Upload the rocketship image and set
+			the </font><font face="Arial, serif">Picture</font><font face="Arial, serif">
+			property to &quot;rocket.png&quot;. Set the </font><font face="Arial, serif">Y</font><font face="Arial, serif">
+			property to 180. This will place the rocket at the bottom of the
+			canvas.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">ImageSprite</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Drawing and Animation</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">SaucerSprite</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">The flying saucer in our game</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Upload the saucer image and set the
+			</font><font face="Arial, serif">Picture</font><font face="Arial, serif">
+			property to &quot;saucer.png&quot;.  Y to 5</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">BallSprite</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Drawing and Animation</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">Bullet</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">The bullet from the rocket ship.</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">PaintColor</font><font face="Arial, serif">
+			to Green and set the </font><font face="Arial, serif">Radius</font><font face="Arial, serif">
+			property to 8.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Clock</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">User Interface</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">Clock1</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">We use the Clock for its Timer method
+			to move the the saucer</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">TimerInterval</font><font face="Arial, serif">
+			property to 3000.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Horizontal Arrangement</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Layout</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">HorizontalArrangement1</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">To contain Label1 and ScoreLabel </font>
+			</p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Label</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">User Interface</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">Label1</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">To contain the word &quot;Score: &quot;</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">Text</font><font face="Arial, serif">
+			property to &quot;Score: &quot;.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Label</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">User Interface</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">ScoreLabel</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">To contain the current numerical
+			score</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">Text</font><font face="Arial, serif">
+			property to &quot;0&quot;.</font></p>
+		</td>
+	</tr>
+	<tr>
+		<td width="106" style="border: none; padding: 0cm">
+			<p><b><font face="Arial, serif">Button</font></b></p>
+		</td>
+		<td width="80" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">User Interface</font></p>
+		</td>
+		<td width="161" style="border: none; padding: 0cm">
+			<p><font color="#008000"><font face="Arial, serif">ResetButton</font></font></p>
+		</td>
+		<td width="131" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">To reset the game so the player can
+			play again</font></p>
+		</td>
+		<td width="246" style="border: none; padding: 0cm">
+			<p><font face="Arial, serif">Change </font><font face="Arial, serif">Text</font><font face="Arial, serif">
+			property to &quot;Reset&quot;.</font></p>
+		</td>
+	</tr>
+</table>
+
+<img src="images/SI_components.png" width="" height="" alt="">
+
+
+<p>Now that you have all the essential properties configured, feel free to change the colours of any components that you want to.</p>
+
+<h3>Moving the rocket</h3>
+<p>In this game, the user will move the rocket from side to side. This means we will only be changing the X-direction of the rocket sprite. To do this we will use the RocketSprite.Dragged event handler. When the rocket is dragged, we will adjust its X property to be the currentX that we dragged the sprite to.</p>
+<img src="images/SI_2.png" >
+<p>Once you put these blocks together, connect your phone and test this feature out!</p>
+<h3>Programming the Bullet's Behaviour</h3>
+<p>There are several features we want our bullet to have in this game. We want it to shoot from the rocket, collide with the saucer and be invisible after the collision and before being shot.</p>
+<p>
+Let's start by using the Screen1.initialize block. When the screen is initialized, we will program the bullet to be invisible. We do this by setting the bullet's visibility property to False.
+</p>
+<img src="images/SI_3.png" >
+
+<p>Next, we want to make sure that the bullet appears again when we shoot from the rocket. When we touch the rocket, we want the bullet to start heading towards the saucer. We will do this by using the RocketSprite.Touched event handler. When the rocket is touched, we not only want to set the bullet to be visible, but we also want to set the speed and heading of the bullet. Heading is a value from 0 to 360 that indicates what direction the sprite should be moving towards. 0/360 is to the left, 90 is up, 180 is right, and 270 is down. The speed is measured in pixels/sec.</p>
+<img src="images/SI_4.png" >
+<p>The last thing we need to program is what happens when the bullet hits the saucer. We will use the Bullet.CollidedWith event handler. This event is called whenever the bullet collides with another sprite. Since our rocket sprite is locked into a Y at the bottom of the screen, the bullet will never collide with the rocket and only with the saucer. On collision we want two things to happen. 1. The score should increase by 1. 2. The bullet should become invisible.</p>
+<img src="images/SI_5.png" >
+<h3>Test it Out!</h3>
+<p>You may have noticed that once you shoot the bullet, it doesn't appear to let you shoot it again. We need to program the bullet to return to the place in front of the rocket when we shoot it. We can do this using the Bullet.MoveTo block.</p>
+<img src="images/SI_6.png" >
+<p>Now, test it out!</p>
+
+<p>You may have noticed that if you miss the saucer, the bullet moves to the top of the screen and gets stuck there until you try shooting again. To make the bullet disappear when it hits the top edge of our canvas, we need to use the Bullet.EdgeReached event handler.</p>
+<img src="images/SI_7.png" >
+<h3>Programming the Reset Button</h3>
+<p>Sometimes, users might want to restart the game and reset their score. When this happens, we need to set the score back to 0.</p>
+<img src="images/SI_8.png" >
+<h3>Increasing the Difficulty -- Changing the Position of the Saucer</h3>
+<p>Let's make the game a little more challenging! Now, when the bullet collides with the saucer, let's change the location of the saucer. The saucer will keep the same Y value so we'll only have to change the X. We can do this by using the random block.</p>
+<img src="images/SI_9.png" >
+<p>To make it even more difficult, we'll also change the position of the saucer when the Timer goes off.</p>
+<img src="images/SI_10.png" >
+<h3>Can you think of any improvements you could make?</h3>
+<p>Add sound – e.g. create a sound component – link it to a sound (upload a sound file) then link it to an event.  E.g. when the bullet if fired or it collides with the ship. Add an icon to the app.</p>
+<h3>Complete Program</h3>
+<p>Here's the complete SpaceInvaders program:</p>
+<img src="images/SI_complete.png" >
+
+
+</article>
+</div>
+</div>
+</body>
+</html>

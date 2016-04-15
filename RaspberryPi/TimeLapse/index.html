@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Raspberry Pi USB Web Cam Time-Lapse</title>
+	<meta name="author" content="Jonny McCullagh"/>
+	<meta name="created" content="2016-02-16T21:30:40.434157172"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900">
+	<link rel="stylesheet" href="css/learning.css" />
+	<style>
+	img {
+		margin: 5px;
+		border: 1px solid #cecece;
+	}
+
+	</style>
+</head>
+<body class="learning worksheet learn worksheet ">
+    <div class="container">
+
+        <header class="header">
+            <a href="/resources/" class="heading" title="Back to raspberrypi.org">Raspberry Pi USB Web Cam Time-Lapse</a>
+        </header>
+
+
+ <div class="main">
+
+<article class="content">
+
+    <h1>Getting Started</h1>
+<p>It is possible to buy a dedicated Raspberry Pi camera module but for this exercise we are going to use a normal USB WebCam with the Raspberry Pi to create a Time-Lapse video. We will program the Pi using a little Shell/Bash code.</p>
+<h2>Connect the camera</h2>
+<p>To start you'll need to connect the camera to the Raspberry Pi using one of the USB ports.</p>
+<ol>
+<li>
+<p>Locate the USB port and connect the Web Cam:</p>
+<p><img src="images/usb_camera.jpg" alt="Connect USB Camera to Pi" /></p>
+</li>
+<li>
+<p>Start up the Pi.</p>
+</li>
+<li>
+<p>Open the <strong>Terminal</strong> from the main menu:</p>
+<p><img src="images/terminal.png" alt="Connect the camera" /></p>
+</li>
+<li>
+<p>Ensure the camera is recognised by typing:</p>
+<span class="code">
+lsusb
+</span>
+<p>After pressing the Enter keyboard key you should see a reference to your Web Cam e.g.</p>
+
+<span class="code">
+Bus 002 Device 003: ID 0c45:62c0 Microdia Sonix USB 2.0 Camera
+</span>
+</li>
+</ol>
+
+<h2>Ensure Software is Installed</h2>
+<p>To capture images from the Web Cam we will use a program named 'fswebcam'. Again in your Terminal type the command fswebcam </p>
+<ol>
+<li>
+<p>Ensure the software is available:</p>
+<span class="code">
+sudo apt-get install fswebcam mencoder
+</span>
+</li>
+<li>
+<p>If the fswebcam is not already installed then the command above will fetch it from the internet and install it on your Raspberry Pi.</p>
+</li>
+
+</ol>
+
+
+
+<h2>Capture an Image</h2>
+<p>Now your camera is connected, you can get started by trying to capture an image preview.</p>
+<ol>
+<li>
+<p>In the <strong>Terminal</strong> type the following command to take a photo:</p>
+<span class="code">
+fswebcam image.jpg
+</span>
+</li>
+
+<li>You should get some output telling you that the image was captured.</li>
+<li>
+<p>Open the <strong>File Manager</strong> from the main menu 
+<img src="images/click_file_manager_icon.png" alt="Click to open the file manager" />
+</p></li>
+<li>
+Locate and open the captured image i.e. image.jpg:</p>
+<p><img src="images/file_manager.png" alt="Raspberry Pi File Manager" /></p>
+</li>
+<li>
+<p>You should notice that the image is black with no detail. We need to tell the camera to wait for a few seconds so it has finished adjusting for the exposure. We can do this by adding <span class="code">-S 20</span> to the command. Try the following in the <strong>Terminal</strong>: </p>
+<span class="code">
+fswebcam -S 20 image.jpg
+</span>
+</li>
+
+<li>
+<p>We can also remove the the banner from the image by adding <span class="code">--no-banner</span> to the command. Try the following: </p>
+<span class="code">
+fswebcam -S 20 -r 640x480 --no-banner image.jpg
+</span>
+</li>
+</ol>
+
+
+<h2>Bash Script</h2>
+<p>In this section of the exercise we will use a programming language called Bash. We will create a Bash script (program) to take multiple photos using the webcam and later we will join the photos to create a time-lapse video.</p>
+<ol>
+<li>Open a Text Editor</li>
+<img src="./images/text-editor.png" alt="Open a Text Editor"/>
+<li>Enter the following Bash code into the Text Editor:</li>
+<pre class="code">
+#!/bin/bash
+
+DATE=$(date +"%Y-%m-%d_%H%M")
+
+for i in {1..100}
+do
+   fswebcam -S 20 --no-banner /home/pi/$DATE.jpg
+   sleep 10
+done
+</pre>
+
+
+<li>Save the file as create-timelapse.sh </li>
+
+
+<li>
+<p>Return to the <strong>Terminal</strong> and type the following command to run the Bash code you saved:</p>
+<span class="code">
+bash create-timelapse.sh
+</span>
+</li>
+
+
+<li>
+<p>This code will run for approximately 17 minutes and will save a photo every 10 seconds. When the code has finished running you should find 100 photos in your <strong>File Manager</strong>.</p>
+</li>
+</ol>
+
+
+<h2>Combine the Photos into a Video</h2>
+<p>
+Now you'll need to stitch the photos together to create a video.
+</p>
+<p>
+You can do this on the Pi using mencoder. First create a list of the names of your photo files:
+</p>
+<ol>
+
+<li>Open your <strong>Terminal</strong> again and type the following:</li>
+<span class="code">ls *.jpg > stills.txt</span>
+<li>This will create a file named stills.txt with the names of all files that end with .jpg.We will use the stills.txt file as input to mencoder.</li>
+
+<li>Type the following command into the Terminal to join all the files into a video (do not press the enter key until after the .txt bit at the end):
+</li>
+<pre class="code">
+mencoder -nosound -ovc lavc -lavcopts vcodec=mpeg4:aspect=16/9:vbitrate=8000000 -vf scale=1920:1080 -o timelapse.avi -mf type=jpeg:fps=24 mf://@stills.txt
+</pre>
+
+<li>
+Once that's completed, you should have a video file called timelapse.avi containing a time-lapse from your images.
+</li>
+</ol>
+</article>
+</div>
+</div>
+</body>
+</html>

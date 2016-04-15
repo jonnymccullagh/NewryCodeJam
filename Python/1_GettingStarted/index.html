@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Newry Code Jam | Python</title>
+	<meta name="author" content="Jonny McCullagh"/>
+	<meta name="created" content="2016-02-16T21:30:40.434157172"/>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100italic,100,300italic,300,400italic,400,500italic,500,700italic,700,900italic,900">
+	<link rel="stylesheet" href="css/learning.css" />
+	<link rel="stylesheet" href="css/keys.css" type="text/css" />
+	<style>
+	
+
+	</style>
+</head>
+<body class="learning worksheet learn worksheet ">
+    <div class="container">
+
+        <header class="header">
+            <a href="/resources/" class="heading" title="Back to raspberrypi.org">Getting Started with Python</a>
+        </header>
+
+
+ <div class="main">
+
+<article class="content">
+
+    <h1>What You Will Need</h1>
+<p>Python is a powerful programming language that can be used to create command-line programs, windowed programs, web apps, games and mobile apps.</p>
+<p>If it isn’t already obvious you will need a computer to do your Python programming. A tablet or phone will not cut the mustard. The Raspberry Pi comes with Python already, but on your computer at home, the quickest way to get started is by downloading and installing the Anaconda package from https://www.continuum.io/downloads</p>
+<h2>Open IDLE</h2>
+<p>To start you should use the IDLE editor for Python 3.</p>
+<ol>
+<li>
+<p>Open the <strong>Python 3 (IDLE)</strong> from the main menu:</p>
+<p><img src="images/idle.png" alt="Python 3 IDLE" /></p>
+</li>
+<li>
+<p>The Python Shell will be displayed.</p>
+
+<p class="note">It is possible to enter commands directly into the Python Shell as we will do now but it is more common to save commands into a file and then run the file.</p>
+</li>
+<img src="images/python_shell.png" align="right" alt="Type commands at the Python shell prompt" />
+<li>At the python shell prompt <span class="code"> >>> </span> type:
+<pre class="code">
+	x = 44
+</pre>
+</li>
+
+<li>Pressing the <kbd class="light">Return</kbd> key on the keyboard.</li>
+<li>Then type the following:
+<pre class="code">
+	print(x)
+</pre>
+</li>
+<li>And press the <kbd class="light">Return</kbd> key again.
+
+</li>
+<li>
+
+<p>You have successfully programmed the computer. You told the computer that 'x' represents the number 44 and then you commanded the computer to print whatever 'x' represents.</p>
+</li>
+<li>Next type <span class="code">
+	x * 10
+</span> and then press <kbd class="light">Return</kbd>: 
+
+
+</li>
+<li>You have multiplied 44 by 10. Other calculations can be made using the symbols: <span class="code">+ - * /</span></li>
+
+<li>
+Another calculation we can perform is 'modulus' - This gives the remainder in a calculation. Try the following code: 
+<pre class="code">
+	x % 10
+</pre>
+You should get answer of 4 - since 4 is the remainder when 44 is divided by 10.
+</li>
+
+
+</ol>
+
+<h2>Creating Python Files</h2>
+<ol>
+<li>
+<p>Next we will save our Python commands in a file and run that file using Python.</p>
+</li>
+
+<li>From the menu choose <strong>File &raquo; New File</strong>
+
+<p><img src="images/new_file.png" alt="Create a new file" /></p>
+</li>
+
+<li>A new window opens and into this window type the following Python code:
+<pre class="code">print("Hello World")</pre>
+</li>
+<li>Choose File > Save As.. and name your file <span class="filename">hello.py</span> </li>
+<li>Now it is time to run your code. From the menu choose <strong>Run &raquo; Run Module</strong> - as shown below</li>
+<p><img src="images/run_module.png" alt="Run the code" /></p>
+<li>If you look at the Python Shell window you should see the output from your <span class="filename">hello.py</span> program. 
+<p><img src="images/python_output.png" alt="Code output" /></p>
+</li>
+</ol>
+<p>You've now written and run your first Python program. Let's make it a little more interesting ...
+</p>
+<h2>Getting User Input</h2>
+<p>Next we will ask the user their name and print their name on the screen.</p>
+<ol>
+<li>In your <span class="filename">hello.py</span> file amend the current text to the following:
+
+<pre class="code">
+name_of_user = input("What is your name ?")
+print("Hello ", name_of_user)
+</pre>
+
+</li>
+<li>Run your code by choosing <strong>Run &raquo; Run Module</strong> from the menu.</li>
+<li>You should be prompted to type your name and when you press the Enter key on the keyboard the program should say hello to you.</li>
+</ol>
+
+
+
+<h2>Repeating Ourselves</h2>
+<p>Computers are very good at repeating tasks that humans would find boring. Let's look at an example of using a <span class="code">for</span> loop:</p>
+<ol>
+<li>Change the code of the <span class="filename">hello.py</span> file to read:
+<pre class="code">
+name_of_user = input("What is your name ?")
+for counter in range(20):
+    print("Hello", name_of_user)	
+</pre>
+
+</li>
+<li>Run your code by choosing <strong>Run > Run Module</strong> from the menu.</li>
+<p><img src="images/for_loop.png" alt="Code output from for loop" /></p>
+<li>In your code try changing the number 20 to something higher and run the code again.</li>
+<li>How about asking the user how many times they want to print the phrase. Amend your code to the following:</li>
+<pre class="code">
+name_of_user = input("What is your name ?")
+number_of_times = input("How many times ?")
+for counter in range(number_of_times):
+    print("Hello", name_of_user)	
+</pre>
+<li>Run your code by choosing <strong>Run &raquo; Run Module</strong> from the menu.</li>
+
+<h2>Conditionals with If</h2>
+<p>We can tell a program to perform different actions based on conditions. We will create a new program that will allow the user to choose a year and the program will respond by informing the user whether that year was a leap year or not.</p>
+<ol>
+<li>Create a new file using File &raquo; New ...</li>
+<li>Save the file as <span class="filename">leapyear.py</span> </li>
+<li>Type the following into your file:</li>
+<pre class="code">
+user_year = int(input("Choose a year ? "))
+if user_year % 4 == 0:
+        print(str(user_year) + " is a leap year")
+else:
+        print(str(user_year) + " is a NOT leap year")
+</pre>
+
+<li>Save the file</li>
+<li>Run your code by choosing <strong>Run &raquo; Run Module</strong> from the menu.</li>
+</ol>
+<p>As you run your program notice that the behaviour of the program changes depending on the IF statement. When the remainder of the sum is equal to (==) zero (i.e. there is no remainder) THEN a successful message is printed ELSE an unsuccessful message is printed.
+</p>
+<h2>Creating a GUI (Graphical User Interface)</h2>
+<p>Could we create our leap year program with a windowed layout and buttons rather than having the user typing commands into a terminal .</p>
+<ol>
+<li>Create a new file using File &raquo; New ...</li>
+<li>Save the file as <span class="filename">leapyear_gui.py</span> </li>
+<pre class="code">
+from tkinter import  *
+
+def is_leap_year(year_to_check):
+        if year_to_check % 4 == 0:
+                label_answer['text'] = str(year_to_check) + ' is a leap year'
+        else:
+                label_answer['text'] = str(year_to_check) + ' is NOT a leap year'
+
+def printResult():
+        year_submitted=int(entry_year.get())
+        is_leap_year(year_submitted)
+
+root = Tk()
+root.title("Leap Year Checker")
+
+label_year = Label(root, text="Which year would you like to check : ")
+label_answer = Label(root, text="")
+entry_year = Entry(root)
+btn = Button(root, text="Check It!", fg="red", command=printResult)
+
+label_year.grid(row=0,column=0)
+entry_year.grid(row=1,column=0, sticky=E)
+btn.grid(row=2,column=0, sticky=E)
+label_answer.grid(row=3,columnspan=2)
+
+root.mainloop()
+</pre>
+<li>Save the file</li>
+<li>Run your code by choosing <strong>Run &raquo; Run Module</strong> from the menu.</li>
+<img src="images/leapyear_gui.png" alt="GUI version of Leap Year program">
+
+</ol>
+
+</article>
+</div>
+</div>
+</body>
+</html>
